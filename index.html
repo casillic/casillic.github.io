@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+<html>
+<style>
+	div.front {
+	 				width:1575px;
+					height:1575px;
+     				max-height:1575px;
+     				position: absolute;
+     				top:0;
+     				left:0;
+ 				}
+	div.rotor1 {
+	 				width:1575px;
+     				max-height:1410px;
+     				overflow: hidden;
+     				position: absolute;
+                         transform-origin: 50% 51.3%;
+     				top:64px;
+     				left:0;
+ 				}
+ 	div.rotor2 {
+	 				width:1575px;
+     				max-height:1124px;
+     				overflow: hidden;
+                         transform-origin: 50% 62.2%;
+     				position: absolute;
+     				top:89px;
+     				left:0;
+ 				}
+ 	div.range1 {
+ 					position: absolute;
+	 				width:100%;
+     				top:25%;
+     				left:25%;
+
+ 				}
+ 	div.range2 {
+ 					position: absolute;
+	 				width:100%;
+     				top:50%;
+     				left:25%;
+ 				}
+
+     #slider1 {
+                width:900px;
+               }
+     #slider2 {
+                width:900px;
+               }
+</style>
+<body>
+<script >
+     function slider1Change()
+     {
+          var slider1 = document.getElementById("slider1");
+          var image1 = document.getElementById("image1");
+          var value = slider1.value/100.0
+          image1.style.transform    = 'rotate('+value+'deg)'; 
+     }
+
+     function slider2Change()
+     {
+          var slider2 = document.getElementById("slider2");
+          var image2 = document.getElementById("image2");
+          var value = slider2.value/100.0
+          image2.style.transform    = 'rotate('+value+'deg)'; 
+     }
+</script>
+<div class="front">
+	<img src="base_front.png"  style="width:1575px;height:1575px;">
+<div class="rotor1" id = "image1">
+	<img src="rotor1 copy.png" >
+</div>
+<div class="rotor2" id = "image2">
+	<img src="rotor2 copy.png"  >
+</div>
+
+<div class="range1">
+<input type="range" name="rotor1" min="0" max="36000" value= "1800" step ="0.01" id="slider1" width="1000px"onchange="slider1Change();" >
+</div >
+<div class="range2">
+<input type="range" name="rotor2" min="0" max="36000" value= "1800" step="0.01" id="slider2" onchange="slider2Change();">
+</div >
+</body>
+</html> 
